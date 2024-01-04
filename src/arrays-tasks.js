@@ -135,15 +135,12 @@ function getStringsLength(arr) {
  *   getAverage([ 1, 10, 100, 1000 ])  => 277,75
  *   getAverage([ 2, 3, 3 ])  => 2,67
  */
-function getAverage(/* arr */) {
-  throw new Error('Not implemented');
-  // const result = arr.reduce((acc, el) => (acc += el), 0) / arr.length;
+function getAverage(arr) {
+  // throw new Error('Not implemented');
+  const result =
+    arr.length > 0 ? arr.reduce((acc, el) => acc + el, 0) / arr.length : 0;
 
-  // return arr.length === 0
-  //   ? 0
-  //   : Number.isInteger(result)
-  //   ? +result
-  //   : +result.toFixed(2);
+  return Number.isInteger(result) ? result : Number(result.toFixed(2));
 }
 
 /**
@@ -403,8 +400,9 @@ function getElementByIndices(/* arr, indices */) {
  *  getFalsyValuesCount([ -1, 'false', null, 0 ]) => 2
  *  getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]) => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  // throw new Error('Not implemented');
+  return arr.filter((el) => !el).length;
 }
 
 /**
@@ -522,8 +520,12 @@ function findLongestIncreasingSubsequence(/* nums */) {
  *  propagateItemsByPositionIndex([ 'a', 'b', 'c', null ]) => [ 'a', 'b', 'b', 'c', 'c', 'c',  null, null, null, null ]
  *  propagateItemsByPositionIndex([ 1,2,3,4,5 ]) => [ 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5 ]
  */
-function propagateItemsByPositionIndex(/* arr */) {
-  throw new Error('Not implemented');
+function propagateItemsByPositionIndex(arr) {
+  // throw new Error('Not implemented');
+
+  return arr.flatMap((el, index) =>
+    Array.from({ length: index + 1 }, () => el)
+  );
 }
 
 /**
