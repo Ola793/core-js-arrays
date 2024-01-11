@@ -368,8 +368,9 @@ function createChunks(/* arr, chunkSize */) {
  *    generateOdds(2) => [ 1, 3 ]
  *    generateOdds(5) => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  // throw new Error('Not implemented');
+  return Array.from({ length: len }, (el, i) => i * 2 + 1);
 }
 
 /**
@@ -380,12 +381,13 @@ function generateOdds(/* len */) {
  * @return {any} - An element from the array
  *
  * @example
- *   getElementByIndices([[1, 2], [3, 4], [5, 6]], [0,0]) => 1        (arr[0][0])
+ *   getElementByIndices([[1, 2], [3, 4], [5, 6]], [0, 0]) => 1        (arr[0][0])
  *   getElementByIndices(['one','two','three'], [2]) => 'three'  (arr[2])
  *   getElementByIndices([[[ 1, 2, 3]]], [ 0, 0, 1 ]) => 2        (arr[0][0][1])
  */
-function getElementByIndices(/* arr, indices */) {
-  throw new Error('Not implemented');
+function getElementByIndices(arr, indices) {
+  // throw new Error('Not implemented');
+  return indices.reduce((acc, el) => acc[el], arr);
 }
 
 /**
@@ -438,8 +440,11 @@ function getIdentityMatrix(/* n */) {
  *    getIndicesOfOddNumbers([2, 4, 6, 8, 10]) => []
  *    getIndicesOfOddNumbers([11, 22, 33, 44, 55]) => [0, 2, 4]
  */
-function getIndicesOfOddNumbers(/* numbers */) {
-  throw new Error('Not implemented');
+function getIndicesOfOddNumbers(numbers) {
+  // throw new Error('Not implemented');
+  const arr = [];
+  numbers.filter((el, i) => (el % 2 ? arr.push(i) : arr));
+  return arr;
 }
 
 /**
