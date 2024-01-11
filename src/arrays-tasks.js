@@ -551,8 +551,9 @@ function propagateItemsByPositionIndex(arr) {
  *    shiftArray(['a', 'b', 'c', 'd'], -1) => ['b', 'c', 'd', 'a']
  *    shiftArray([10, 20, 30, 40, 50], -3) => [40, 50, 10, 20, 30]
  */
-function shiftArray(/* arr, n */) {
-  throw new Error('Not implemented');
+function shiftArray(arr, n) {
+  // throw new Error('Not implemented');
+  return arr.slice(-n).concat(arr.slice(0, -n));
 }
 
 /**
@@ -582,6 +583,7 @@ function sortDigitNamesByNumericOrder(arr) {
     eight: 8,
     nine: 9,
   };
+
   return arr.sort((a, b) => digits[a] - digits[b]);
 }
 
